@@ -22,8 +22,8 @@ async function addArticle(req, res, next) {
     });
 }
 
-function getArticles(req, res, next) {
-  articles
+async function getArticles(req, res, next) {
+  await articles
     .findAll()
     .then(function (articles) {
       res.status(200).json(articles);
