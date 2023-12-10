@@ -11,7 +11,7 @@ async function addContact(req, res, next) {
     })
     .then(function () {
       res.status(201).json({
-        message: "kontak berhasil ditambahkan",
+        message: `Terima kasih telah menghubungi kami!\nKami akan merespon melalui email anda dalam jangka waktu 2x24 Jam (Hari Kerja)`,
       });
     })
     .catch(function (err) {

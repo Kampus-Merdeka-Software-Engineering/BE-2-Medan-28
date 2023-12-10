@@ -18,7 +18,7 @@ const contacts = db.define("contacts", {
     type: DataTypes.STRING,
   },
   message: {
-    type: DataTypes.STRING,
+    type: DataTypes.TEXT('long'),
   },
 });
 
