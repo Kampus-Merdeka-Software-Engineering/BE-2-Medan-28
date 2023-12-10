@@ -12,7 +12,7 @@ const articles = db.define("articles", {
     type: DataTypes.STRING,
   },
   content: {
-    type: DataTypes.STRING,
+    type: DataTypes.TEXT('long'),
   },
   urlImage: {
     type: DataTypes.STRING,
