@@ -1,15 +1,21 @@
-import express from "express"
-import articleController from "../controller/articles.js"
-import contactController from "../controller/contacts.js"
+import express from "express";
+import articleController from "../controller/articles.js";
+import contactController from "../controller/contacts.js";
 
-const router = express.Router()
+const router = express.Router();
 
-router.get("/articles", articleController.getArticles)
+router.get("/articles", articleController.getArticles);
 
-router.post("/articles", articleController.addArticle)
+router.post("/articles", articleController.addArticle);
 
-router.get("/contacts", contactController.getContacts)
+router.get("/articles/:id", articleController.getArticleById, (req, res) => {
+  res.send(res.article);
+});
 
-router.post("/contacts", contactController.addContact)
+router.post("/backfill-articles", articleController.backfillArticle);
 
-export default router
+router.get("/contacts", contactController.getContacts);
+
+router.post("/contacts", contactController.addContact);
+
+export default router;
