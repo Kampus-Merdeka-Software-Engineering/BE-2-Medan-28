@@ -26,6 +26,15 @@ async function getArticles(req, res, next) {
   await articles
     .findAll()
     .then(function (articles) {
+      res.status(200).json(articles);
+    })
+    .catch((err) => console.error(err));
+}
+
+async function getArticlesDesc(req, res, next) {
+  await articles
+    .findAll()
+    .then(function (articles) {
       res.status(200).json(articles.reverse());
     })
     .catch((err) => console.error(err));
@@ -98,4 +107,4 @@ function backfillArticle(req, res, next) {
     });
 }
 
-export default { addArticle, getArticles, backfillArticle, getArticleById };
+export default { addArticle, getArticles, getArticlesDesc, backfillArticle, getArticleById };

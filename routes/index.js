@@ -6,6 +6,8 @@ const router = express.Router();
 
 router.get("/articles", articleController.getArticles);
 
+router.get("/desc-articles", articleController.getArticlesDesc);
+
 router.post("/articles", articleController.addArticle);
 
 router.get("/articles/:id", articleController.getArticleById, (req, res) => {
